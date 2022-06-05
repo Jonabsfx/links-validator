@@ -1,8 +1,6 @@
-import fs from 'fs';
+import fs from 'fs'
 import chalk from 'chalk'
-/*
-  
-*/
+
 
 function extraiLinks(text) 
 {
@@ -20,16 +18,16 @@ function catchError(error)
     throw new Error(chalk.red(error.code, 'Não há arquivo no caminho'));
 }
 
-function getFile(pathFile)
+async function getFile(pathFile)
 {
     const enconding = 'utf-8';
 
     try {
-        const text = await fs.promises.readFile(pathFile, encoding)
+        const text = await fs.promises.readFile(pathFile, enconding)
         console.log(extraiLinks(text));
       } catch(error) {
-        trataErro(error);
+        catchError(error);
       }
 }
 
-getFile('./arquivos/texto1.md');
+export default getFile;
