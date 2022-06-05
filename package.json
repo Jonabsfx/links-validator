@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "fs": "^0.0.1-security"
+  },
+
+  "type": "module"
+}
