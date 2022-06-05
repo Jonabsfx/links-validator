@@ -6,10 +6,10 @@ const path = process.argv;
 
 async function textProcess(pathFile) {
   const result = await getFile(pathFile[2]);
-  if (path[3] === 'validar') {
-    console.log(chalk.yellow('links validados'), await urlValidator(resulte));
+  if (path[3] === 'validate') {
+    console.log(chalk.yellow('validated links'), await urlValidator(resulte));
   } else {
-    console.log(chalk.yellow('lista de links'), result);
+    console.log(chalk.yellow('list of links'), result);
   }
 }
 

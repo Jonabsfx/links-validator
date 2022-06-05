@@ -10,12 +10,12 @@ function linkExtractor(text)
     while((temp = regex.exec(text)) !== null) {
       arrayResults.push({ [temp[1]]: temp[2] })
     }
-    return arrayResults.length === 0 ? 'não há links' : arrayResults;
+    return arrayResults.length === 0 ? 'ERROR: there\'s no link' : arrayResults;
 }
 
 function catchError(error)
 {
-    throw new Error(chalk.red(error.code, 'Não há arquivo no caminho'));
+    throw new Error(chalk.red(error.code, 'ERROR: no file'));
 }
 
 async function getFile(pathFile)
