@@ -1,15 +1,29 @@
 {
   "name": "lib-markdown",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "lib to extract link patterns from markdown files",
+  "main": "./cli.js",
+  "bin": {
+    "lib-markdown": "./cli.js"
+  },
+  "preferGlobal": true,
   "scripts": {
     "test": "jest ./test",
     "cli": "node cli.js ./arquivos/texto1.md"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "markdown",
+    "URL"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jonabsfx/links-validator.git"
+  },
+  "author": "Jonab Silveira",
   "license": "ISC",
+  "bugs":{
+    "url": "https://github.com/Jonabsfx/links-validator/issues"
+  },
   "dependencies": {
     "chalk": "^4.1.2",
     "fs": "^0.0.1-security",
