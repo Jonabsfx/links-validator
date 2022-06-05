@@ -1,5 +1,11 @@
-import getFile from './index.js'
-
+import chalk from 'chalk';
+import getFile from './index.js';
 
 const path = process.argv;
-console.log(getFile(path[2]));
+
+async function textProcess(pathFile) {
+  const result = await getFile(pathFile[2]);
+  console.log(chalk.yellow('lista de links'), result);
+}
+
+textProcess(path);

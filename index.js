@@ -2,7 +2,7 @@ import fs from 'fs'
 import chalk from 'chalk'
 
 
-function extraiLinks(text) 
+function linkExtractor(text) 
 {
     const regex = /\[([^\]]*)\]\((https?:\/\/[^$#\s].[^\s]*)\)/gm;
     const arrayResults = [];
@@ -10,7 +10,7 @@ function extraiLinks(text)
     while((temp = regex.exec(text)) !== null) {
       arrayResults.push({ [temp[1]]: temp[2] })
     }
-    return arrayResults;
+    return arrayResults.length === 0 ? 'não há links' : arrayResults;
 }
 
 function catchError(error)
@@ -24,9 +24,9 @@ async function getFile(pathFile)
 
     try {
         const text = await fs.promises.readFile(pathFile, enconding)
-        console.log(extraiLinks(text));
+        return linkExtractor(text);
       } catch(error) {
-        catchError(error);
+        catchError(error);  
       }
 }
 
