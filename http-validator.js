@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-function errorManager(error)
+function errorHandler(error)
 {
   throw new Error(error.message);
 }
@@ -16,7 +16,7 @@ async function statusCheck(arrayURL)
         }))
         return arrayStatus;
       } catch(erro) {
-        errorManager(erro);
+        errorHandler(erro);
       } 
 }
 

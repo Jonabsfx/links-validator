@@ -1,4 +1,4 @@
-import getFile from './index.js';
+import getFile from '../index';
 
 const arrayResult = [
     {
@@ -12,13 +12,13 @@ const arrayResult = [
     })
 
     it('it should return an array with results', async () => {
-      const result = await getFile('./arquivos/texto1.md') 
-      expect(result).toEqual(arrayResult)
+      const result = await getFile('./test/arquivos/texto1.md') 
+      expect(result).toEqual(arrayResult);
     })
 
     it('it should return message "there are no links"', async() =>{
-        const result = await getFile('./arquivos/texto1-sem-links.md')
-        expect(result).toBe('there are no links');
+        const result = await getFile('./test/arquivos/texto1-sem-links.md')
+        expect(result).toBe('ERROR: there\'s no link');
     })
     it('it should throw a missing file error', () => {
         async function catchError()
