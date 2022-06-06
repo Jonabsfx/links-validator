@@ -7,7 +7,7 @@ const path = process.argv;
 async function textProcess(pathFile) {
   const result = await getFile(pathFile[2]);
   if (path[3] === 'validate') {
-    console.log(chalk.yellow('validated links'), await urlValidator(resulte));
+    console.log(chalk.yellow('validated links'), await urlValidator(result));
   } else {
     console.log(chalk.yellow('list of links'), result);
   }

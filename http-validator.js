@@ -2,14 +2,14 @@ import fetch from 'node-fetch';
 
 function errorManager(error)
 {
-    throw new Error(error.message);
+  throw new Error(error.message);
 }
 
 async function statusCheck(arrayURL)
 {
     try {
         const arrayStatus = await Promise
-          .all(arrayURLs
+          .all(arrayURL
             .map(async url => {
               const res = await fetch(url)
               return res.status;
@@ -29,7 +29,7 @@ function arrayURLGenerator(arrayLinks)
 async function urlValidator(arrayLinks)
 {
     const links = arrayURLGenerator(arrayLinks);
-    const statusLink = await statusCheck(links);
+    const statusLinks = await statusCheck(links);
     const results = arrayLinks.map((object, index) => ({
         ...object,
         status: statusLinks[index]
