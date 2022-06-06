@@ -1,10 +1,10 @@
 {
-  "name": "lib-markdown",
+  "name": "url-md-validator",
   "version": "1.0.0",
-  "description": "lib to extract link patterns from markdown files",
+  "description": "lib to extract url patterns from markdown files and validated them",
   "main": "./cli.js",
   "bin": {
-    "lib-markdown": "./cli.js"
+    "url-validator": "./cli.js"
   },
   "preferGlobal": true,
   "scripts": {
@@ -19,10 +19,11 @@
     "type": "git",
     "url": "git+https://github.com/Jonabsfx/links-validator.git"
   },
-  "author": "Jonab Silveira",
+  "author": "Jonabsfx",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Jonabsfx/links-validator/issues"
+    "url": "https://github.com/Jonabsfx/links-validator/issues",
+    "email": "jonabsfx@gmail.com"
   },
   "dependencies": {
     "chalk": "^4.1.2",
